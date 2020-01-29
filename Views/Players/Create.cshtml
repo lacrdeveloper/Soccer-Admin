@@ -1,0 +1,61 @@
+@model soccerleague.Models.Players
+
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Player Add</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Player Add</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <form class="form-horizontal" method="post" action="Create">
+            <div class="row">
+                <div class="col-md-12">
+                <div class="card card-secondary">
+                    <div class="card-header">
+                    <h3 class="card-title">General</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i></button>
+                    </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Firstname)
+                            @Html.TextBoxFor(model => model.Firstname, new {@class="form-control"})
+                            @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label for="inputName">Lastname</label>
+                            @Html.TextBoxFor(model => model.Lastname, new {@class="form-control"})
+                            @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label for="inputName">Birthday</label>
+                            <input type="text" name="Birthday" class="form-control">
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a asp-controller="Players" asp-action="Index" class="btn btn-secondary">Cancel</a>
+                    <input type="submit" value="Create" class="btn btn-success float-right">
+                </div>
+            </div>
+        </form>    
+    </section>
