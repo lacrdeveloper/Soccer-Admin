@@ -21,7 +21,6 @@ namespace soccerleague.Controllers
             {
                 if (_admin.Where(s => s.Password == admin.Password).Any())
                 {
-
                     return Json(new { status = true, message = "Login Successfull!" });
                 }
                 else

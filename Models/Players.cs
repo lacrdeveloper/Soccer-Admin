@@ -7,12 +7,12 @@ namespace soccerleague.Models
     public partial class Players
     {
         public int Id { get; set; }
-        
-        [Required(ErrorMessage = "Please enter a Model Description.")]
         public string Firstname { get; set; }
-        [Required]
         public string Lastname { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime Birthday { get; set; }
+        public string Image { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
     }

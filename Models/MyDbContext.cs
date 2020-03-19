@@ -101,6 +101,12 @@ namespace soccerleague.Models
                     .HasCharSet("utf8")
                     .HasCollation("utf8_general_ci");
 
+                entity.Property(e => e.Image)
+                    .HasColumnName("image")
+                    .HasColumnType("varchar(100)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+
                 entity.Property(e => e.Lastname)
                     .IsRequired()
                     .HasColumnName("lastname")
